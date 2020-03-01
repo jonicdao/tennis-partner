@@ -51,6 +51,9 @@
         <li class="nav-item">
           <a class="nav-link" href="#">My Profile</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Sign Up</a>
+        </li>
       </ul>
     </div>
   </nav>
@@ -64,8 +67,8 @@
       <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
       <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
     </form>
-  <p>Return with a list of tennis partners and qualifications. Click on their names to see details</p>
-  <p>Return with map of where they are (example, San Jose, CA)</p>
+  <p class="lead">Return with a list of tennis partners and qualifications. Click on their names to see details</p>
+  <p class="lead">Return with map of where they are (example, San Jose, CA)</p>
 
 <div id="googleMap" style="width:100%;height:400px;"></div>
 
@@ -79,7 +82,8 @@ var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
 }
 </script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuhjHW0hJOR3vulvUFLu-tdr-Wzj3hZWU&callback=myMap"></script>
+<!-- Google maps api-->
+<script src="https://maps.googleapis.com/maps/api/js?key=PUTAPIHERE&callback=myMap"></script>
 
 </main><!-- /.container -->
 
