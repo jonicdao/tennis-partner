@@ -6,3 +6,5 @@ from django.template import loader
 
 def index(request):
     return render(request, 'partner/index.html')
+
+
