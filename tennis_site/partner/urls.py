@@ -4,7 +4,10 @@ from . import views
 
 app_name = 'partner'
 urlpatterns = [
-    path('', views.index, name = 'index'),
+    path('', views.IndexView.as_view(), name='index'),
+    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+    path('result/', views.ResultsView, name='result'),
+    # path('', views.index, name = 'index'),
 ]
 
 # To be implemented:

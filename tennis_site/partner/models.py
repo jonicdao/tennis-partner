@@ -8,7 +8,7 @@ class Partner(models.Model):
     level = models.CharField(max_length=5)
     zipcode = models.IntegerField()
     email = models.EmailField(max_length=254)
-    description = models.TextField()
+    description = models.TextField(default = "I'm a great player")
 
     class Meta:
         verbose_name = ("partner")
