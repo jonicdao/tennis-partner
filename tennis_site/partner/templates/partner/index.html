@@ -66,61 +66,16 @@
 </div>
 
 <main role="main" class="container">
-
+<div class="row">
     <form class="form-inline my-2 my-lg-0"  action = "result/" method = "GET">
       {% csrf_token %}
       <input class="form-control mr-sm-2"   name = 'q' type="text" placeholder="Search" aria-label="Search">
      <button class="btn btn-secondary my-2 my-sm-0"  type="submit">Search</button>
     </form>
-
+</div>
     <!--Dummy data below, change to template-->
-  <p class="lead">Return with a list of tennis partners and qualifications. </p>
-    <table class="table" style="width:100%">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">Firstname</th>
-        <th scope="col">Lastname</th>
-        <th scope="col">Level</th>
-        <th scope="col">Zipcode</th>
-        <th scope="col">Contact</th>
-      </tr>
-      </thead>
-      <tbody>
-         {% for partner in object_list %}
-            <tr>
-              <td>{{partner.first_name}}</td>
-              <td>{{partner.last_name}}</td>
-              <td>{{partner.level}}</td>
-              <td>{{partner.zipcode}}</td>
-              <td><a href="{% url 'partner:detail' partner.id %}">{{partner.email}}</a></td>
-            </tr>
-         {% endfor %}
-      </tbody>
-    </table>
-   
-   
-   <hr>
-  <p class="lead">Return with map of where they are (example, San Jose, CA. )</p>
+  
 
-<!-- Map below deliberately disabled -->
-<div id="googleMap" style="width:100%;height:400px;"></div>
-
-<script>
-function myMap() {
-var mapProp= {
-  center:new google.maps.LatLng(37.3382,-121.8863),
-  zoom:12,
-};
-var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
-}
-</script>
-
-<iframe width="600" height="450" frameborder="0" style="border:0" src="https://www.google.com/maps/embed/v1/search?q=tennis%20courts&key=AIzaSyCuhjHW0hJOR3vulvUFLu-tdr-Wzj3hZWU" allowfullscreen></iframe>
-
-<!-- Google maps api-->
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCuhjHW0hJOR3vulvUFLu-tdr-Wzj3hZWU&callback=myMap"></script>
-
-</main><!-- /.container -->
 
 
 <!-- footer -->

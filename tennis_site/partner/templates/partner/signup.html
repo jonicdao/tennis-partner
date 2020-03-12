@@ -42,23 +42,22 @@
 <body>
 <div class="container">
 
-
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="partner/">TennisTinder</a>
+    <a class="navbar-brand" href="">TennisTinder</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="partner/">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
         </li>
-        <li class="nav-item">
-          <a class="nav-link" href="detail/">My Profile</a>
+        {% comment %} <li class="nav-item">
+          <a class="nav-link" href="{% url 'result' %}">My Profile</a>
           <!-- todo profile page-->
-        </li>
+        </li> {% endcomment %}
         <li class="nav-item">
-          <a class="nav-link" href="signup/">Sign Up</a>
+          <a class="nav-link" href="{% url 'post_new' %}">Sign Up</a>
           <!-- todo signup page-->
         </li>
       </ul>
@@ -66,17 +65,17 @@
   </nav>
 
     <div class="jumbotron">
-    <h1 class="display-4">Hello!</h1>
+    <h1 class="display-4">Join to find tennis partners!</h1>
     <p class="lead">Signup here so we can match you with players in your zipcode area</p>
     </div>
 
   <h2>Signup </h2>
   <p>
      Signup form </p>
-        <a href="{% url 'partner:post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
         <form method="POST" class="post-form">{% csrf_token %}
             {{ form.as_p  }}
-        <button type="submit" class="save btn btn-default">Save</button>
+        <button type="submit" class="save btn btn-default">Sign up!</button>
     </form>
   <!-- footer -->
 
