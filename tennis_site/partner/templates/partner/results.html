@@ -40,22 +40,20 @@
 <body>
 <div class='container'>
   <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">TennisTinder</a>
+    <a class="navbar-brand" href="">TennisTinder</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">My Profile</a>
-          <!-- todo profile page-->
+          <a class="nav-link" href="detail/">My Profile</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Sign Up</a>
-          <!-- todo signup page-->
+          <a class="nav-link" href="signup/">Sign Up</a>
         </li>
       </ul>
     </div>
@@ -64,18 +62,16 @@
 <div class="jumbotron">
   <h1 class="display-4">Welcome to TennisTinder</h1>
   <p class="lead">Find a tennis partner in your area</p>
-  <hr class="my-4">
 </div>
 
 <main role="main" class="container">
 
 <h1>These are the possible partners</h1>
-{{ result.zipcode }}
-{% for result in results %}
-   <p> {{ result.first_name}} {{ result.last_name}} </p>
-   <p> {{ result.email}} </p>
-   <hr>
-{% endfor %}
+  {{ result.zipcode }}
+  {% for result in results %}
+    <p> {{ result.first_name}} {{ result.last_name}} tennis level {{result.level}} <a href="mailto:{{ result.email}}?Subject=Possible Tennis Partner">Contact</a></p>
+    <hr>
+  {% endfor %}
 
 
 
