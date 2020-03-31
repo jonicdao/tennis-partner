@@ -6,13 +6,13 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a class="nav-link" href="">Home<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{% url 'partner:index' %}">Home<span class="sr-only">(current)</span></a>
         </li>
+        {% comment %} <li class="nav-item">
+          <a class="nav-link" href="{% url 'partner:detail' %}">My Profile</a>
+        </li> {% endcomment %}
         <li class="nav-item">
-          <a class="nav-link" href="detail/">My Profile</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="signup/">Sign Up</a>
+          <a class="nav-link" href="{% url 'partner:signup' %}">Sign Up</a>
         </li>
       </ul>
     </div>

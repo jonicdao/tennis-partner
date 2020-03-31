@@ -1,24 +1,18 @@
+{% extends "base.html" %}
 {% load static %}
+
 {% load crispy_forms_tags %}
 
-<div class="container">
-
-
-
+{% block content %}
     <div class="jumbotron">
-    <h1 class="display-4">Join to find tennis partners!</h1>
-    <p class="lead">Signup here so we can match you with players in your zipcode area</p>
+        <h1 class="display-4">Join to find tennis partners!</h1>
+        <p class="lead">Signup here so we can match you with players in your zipcode area</p>
     </div>
-
-  <h2>Signup </h2>
-  <p>
-     Signup form </p>
-        <a href="{% url 'post_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+    <div>
+        <a href="{% url 'partner:signup' %}" class="top-menu"><span></span></a>
         <form method="POST" class="post-form">{% csrf_token %}
-            {{ form.as_p  }}
+            {{ form | crispy }}
         <button type="submit" class="save btn btn-default">Sign up!</button>
     </form>
-
-</div>
-
-</html>
+    </div>
+{% endblock %}

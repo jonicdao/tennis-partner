@@ -1,47 +1,32 @@
+{% extends "base.html" %}
 {% load static %}
 
-
-<div class='container'>
-
-
+{% block content %}
 <div class="jumbotron">
-  <h1 class="display-4">Welcome to TennisTinder</h1>
-  <p class="lead">Find a tennis partner in your area</p>
+  <h1 class="display-4">Here are the possible tennis partners in your area</h1>
+  <p class="lead">Contact them to schedule a match. Good luck!</p>
 </div>
 
-<main role="main" class="container">
-
-<h2 class="lead">Here are the tennis players in your area:</h2>
-    <table class="table" style="width:100%">
-      <thead class="thead-dark">
-      <tr>
-        <th scope="col">Firstname</th>
-        <th scope="col">Lastname</th>
-        <th scope="col">Level</th>
-        <th scope="col">Zipcode</th>
-        <th scope="col">Contact</th>
+  <table class="table" style="width:100%">
+    <thead class="thead-dark">
+    <tr>
+      <th scope="col">Firstname</th>
+      <th scope="col">Lastname</th>
+      <th scope="col">Level</th>
+      <th scope="col">Zipcode</th>
+      <th scope="col">Contact</th>
+    </tr>
+    </thead>
+    <tbody>
+      {% for result in results %}            
+        <tr>
+        <td>{{result.first_name}}</td>
+        <td>{{result.last_name}}</td>
+        <td>{{result.level}}</td>
+        <td>{{result.zipcode}}</td>
+        <td><a href="mailto:{{ result.email}}?Subject=Possible Tennis Partner">Contact</a></td>
       </tr>
-      </thead>
-      <tbody>
-        {% for result in results %}            
-          <tr>
-          <td>{{result.first_name}}</td>
-          <td>{{result.last_name}}</td>
-          <td>{{result.level}}</td>
-          <td>{{result.zipcode}}</td>
-          <td><a href="mailto:{{ result.email}}?Subject=Possible Tennis Partner">Contact</a></td>
-        </tr>
-        {% endfor %}
-      </tbody>
-    </table>
-   
-   
-   <hr>
-
-
-</main><!-- /.container -->
-
-
-
-</body>
-</html>
+      {% endfor %}
+    </tbody>
+  </table>
+{% endblock %}

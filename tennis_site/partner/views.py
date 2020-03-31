@@ -19,16 +19,18 @@ class IndexView(generic.ListView):
 
 class DetailView(generic.DetailView):
     model = Partner
-    template_name = "partner/detail.html"
+    template_name = "detail.html"
 
 def ResultsView(request):
-    template_name = "partner/results.html"
+    template_name = "results.html"
     query = request.GET.get('q')
     print('what query', query)
     results = Partner.objects.filter(zipcode=query)
     return render(request, template_name, {'results': results})
 
-def post_new(request):
+def signup(request):
+    # return HttpResponse("i'm signup")
+    template_name= "partner/signup.html"
     if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
@@ -36,10 +38,10 @@ def post_new(request):
             post.author = request.user
             print('post pk is', post.pk)
             post.save()
-            return redirect('detail', pk=post.pk)
+            return redirect('partner:detail', pk=post.pk)
     else:
         form = PostForm()
-    return render(request, 'partner/signup.html', {'form': form})
+    return render(request, template_name, {'form': form})
 
 # class ResultsView(generic.DetaiView):
 #     model = Partner
