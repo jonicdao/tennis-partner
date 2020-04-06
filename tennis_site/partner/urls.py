@@ -6,7 +6,7 @@ app_name='partner'
 
 urlpatterns = [
     path('', views.IndexView.as_view(), name='index'),
-    path('<int:pk>/', views.DetailView.as_view(), name='detail'),
+    path('detail/<int:pk>/', views.DetailView.as_view(), name='detail'),
     path('result/', views.ResultsView, name='result'),
     path('signup/', views.signup, name='signup'),
 

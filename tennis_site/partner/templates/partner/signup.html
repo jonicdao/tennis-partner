@@ -8,11 +8,15 @@
         <h1 class="display-4">Join to find tennis partners!</h1>
         <p class="lead">Signup here so we can match you with players in your zipcode area</p>
     </div>
-    <div>
-        <a href="{% url 'partner:signup' %}" class="top-menu"><span></span></a>
-        <form method="POST" class="post-form">{% csrf_token %}
-            {{ form | crispy }}
-        <button type="submit" class="save btn btn-default">Sign up!</button>
-    </form>
+    <div class="row">
+        <div class="col-sm">
+            <a href="{% url 'partner:signup' %}" class="top-menu"></a>
+            <form method="POST" class="post-form">{% csrf_token %}
+                {{ form | crispy }}
+                <button type="submit" class="save btn btn-default">Sign up!</button>
+            </form>
+        </div>
     </div>
+    <br>
+    <hr>
 {% endblock %}
